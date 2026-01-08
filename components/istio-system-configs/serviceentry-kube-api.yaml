@@ -9,8 +9,10 @@ metadata:
 spec:
   hosts:
   - kubernetes.default.svc.cluster.local
+  - kubernetes.default.svc
   ports:
   - number: 443
     protocol: HTTPS
     name: https
   resolution: DNS
+  location: MESH_EXTERNAL
