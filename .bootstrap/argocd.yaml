@@ -247,6 +247,11 @@ spec:
               msg =  msg .. ".status.state is '" .. obj.status.state .. "'\n"
             end
         
+            if obj.status.installedCSV == obj.spec.startingCSV and numPending > 0 and numDegraded == 0 then
+              health_status.status = "Healthy"
+              health_status.message = msg
+              return health_status
+            end
             if numDegraded == 0 and numPending == 0 then
               health_status.status = "Healthy"
               health_status.message = msg

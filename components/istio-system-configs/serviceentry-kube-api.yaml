@@ -9,7 +9,9 @@ metadata:
 spec:
   hosts:
   - kubernetes.default.svc.cluster.local
-  - kubernetes.default.svc
+  # - kubernetes.default.svc
+  # addresses:
+  #   - 10.217.4.1
   ports:
   - number: 443
     protocol: HTTPS
