@@ -1,6 +1,7 @@
 istioCNI:
-  version: v1.24.3
-  namespace: istio-cni
+  spec:
+    version: v1.24.3
+    namespace: istio-cni
 # https://istio.io/latest/docs/setup/upgrade/canary/
 istioRevisionTags: 
   # https://istio.io/latest/docs/setup/upgrade/canary/#default-tag
