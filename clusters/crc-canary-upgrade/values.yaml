@@ -11,7 +11,7 @@ default:
       namespace: openshift-gitops
       server: https://kubernetes.default.svc
     source:
-      repoURL: https://github.com/trevorbox/openshift-service-mesh
+      repoURL: https://github.com/daferoli/openshift-service-mesh
       targetRevision: HEAD
     syncOptions:
     - ApplyOutOfSyncOnly=true
