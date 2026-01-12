@@ -9,7 +9,7 @@ tenant:
   pools:
     - name: pool-0
       servers: 1
-      storageClassName: crc-csi-hostpath-provisioner
+      storageClassName: ocs-external-storagecluster-ceph-rbd
       size: 2Gi
       securityContext: 
         runAsNonRoot: true
