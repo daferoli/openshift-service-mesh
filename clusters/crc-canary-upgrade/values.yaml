@@ -230,16 +230,16 @@ applications:
     source:
       path: clusters/crc/overlays/bookinfo
 
-  oauth2-proxy:
-    annotations:
-      argocd.argoproj.io/compare-options: IgnoreExtraneous
-      argocd.argoproj.io/sync-wave: '4'
-    destination:
-      namespace: oauth2-proxy
-      server: https://kubernetes.default.svc?__team=team1
-    project: team1
-    source:
-      path: components/oauth2-proxy
+  # oauth2-proxy:
+  #   annotations:
+  #     argocd.argoproj.io/compare-options: IgnoreExtraneous
+  #     argocd.argoproj.io/sync-wave: '4'
+  #   destination:
+  #     namespace: oauth2-proxy
+  #     server: https://kubernetes.default.svc?__team=team1
+  #   project: team1
+  #   source:
+  #     path: components/oauth2-proxy
 
   # kiali:
   #   annotations:
