@@ -52,6 +52,7 @@ projects:
     sourceRepos:
     - https://github.com/trevorbox/openshift-service-mesh
     - https://github.com/redhat-cop/helm-charts
+    - https://github.com/daferoli/openshift-service-mesh
     destinations: |
       - namespace: '*'
         server: https://kubernetes.default.svc?__team=team1
