@@ -5,4 +5,4 @@ datasource:
     customQueryParameters:
 consoleLink: 
   enabled: true
-  route: "https://grafana-instance-route-grafana.apps-crc.testing"
+  route: "https://grafana-instance-route-grafana.apps.cluster-tlkwm.dynamic.redhatworkshops.io"

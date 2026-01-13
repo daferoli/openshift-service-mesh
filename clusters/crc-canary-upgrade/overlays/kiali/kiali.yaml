@@ -51,13 +51,13 @@ spec:
         - name: Istio Performance Dashboard
         - name: Istio Wasm Extension Dashboard
       enabled: true
-      external_url: https://grafana-instance-route-grafana.apps-crc.testing
+      external_url: https://grafana-instance-route-grafana.apps.cluster-tlkwm.dynamic.redhatworkshops.io
       internal_url: http://grafana-instance-service.grafana.svc:3000
     prometheus:
       url: http://prometheus-server.prometheus.svc.cluster.local
     # tracing:
     #   enabled: true
-    #   external_url: https://grafana-instance-route-grafana.apps-crc.testing
+    #   external_url: https://grafana-instance-route-grafana.apps.cluster-tlkwm.dynamic.redhatworkshops.io
     #   # grpc_port: 9095
     #   health_check_url: http://tempo-minio-dev-query-frontend.tempo-system.svc.cluster.local:3200/ready
     #   internal_url: >-
@@ -75,9 +75,9 @@ spec:
       use_grpc: false
       # internal_url: https://tempo-minio-dev-gateway.tempo-system.svc.cluster.local:8080/api/traces/v1/dev/tempo
       internal_url: 'https://tempo-minio-dev-gateway.tempo-system.svc.cluster.local:8080/api/traces/v1/dev'
-      # external_url: https://tempo-minio-dev-gateway-tempo-system.apps-crc.testing/api/traces/v1/dev/search
-      external_url: https://tempo-minio-dev-gateway-tempo-system.apps-crc.testing/api/traces/v1/dev
-      health_check_url: https://tempo-minio-dev-gateway-tempo-system.apps-crc.testing/api/traces/v1/dev/tempo/api/echo
+      # external_url: https://tempo-minio-dev-gateway-tempo-system.apps.cluster-tlkwm.dynamic.redhatworkshops.io/api/traces/v1/dev/search
+      external_url: https://tempo-minio-dev-gateway-tempo-system.apps.cluster-tlkwm.dynamic.redhatworkshops.io/api/traces/v1/dev
+      health_check_url: https://tempo-minio-dev-gateway-tempo-system.apps.cluster-tlkwm.dynamic.redhatworkshops.io/api/traces/v1/dev/tempo/api/echo
       auth:
         ca_file: /var/run/secrets/kubernetes.io/serviceaccount/service-ca.crt
         insecure_skip_verify: true
