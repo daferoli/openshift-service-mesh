@@ -9,8 +9,8 @@ istioRevisionTags:
     istioRevision: default-v1-24-3
   # stable:
   #   istioRevision: stable-v1-24-3
-  # canary:
-  #   istioRevision: canary-v1-24-latest
+  canary:
+    istioRevision: canary-v1-24-latest
 revisions:
   - name: default
     spec:
