@@ -7,7 +7,7 @@ spec:
   gatewayClassName: istio
   listeners:
   - name: default
-    hostname: "bookinfo-waypoint-istio-ingress.apps-crc.testing"
+    hostname: "bookinfo-waypoint-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io"
     port: 443
     protocol: HTTPS
     tls:

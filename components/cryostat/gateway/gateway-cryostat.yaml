@@ -8,7 +8,7 @@ spec:
     istio: ingressgateway
   servers:
     - hosts:
-        - cryostat-istio-ingress.apps-crc.testing
+        - cryostat-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
       port:
         name: https
         number: 8443

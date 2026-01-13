@@ -28,7 +28,7 @@ auth0 login
 
 #create the app
 auth0 apps create --name authz-custom --description authz-custom --type regular \
-  --callbacks https://nginx-echo-headers-istio-ingress.apps-crc.testing/oauth2/callback,https://golang-ex-stable-istio-ingress.apps-crc.testing/oauth2/callback
+  --callbacks https://nginx-echo-headers-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io/oauth2/callback,https://golang-ex-stable-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io/oauth2/callback
 
 # get the client id from the list for myapp
 auth0 apps list

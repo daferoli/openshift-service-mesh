@@ -9,7 +9,7 @@ spec:
   secretName: amq-console-cert
   # commonName: amq-console
   dnsNames:
-    - amq-console-istio-ingress.apps-crc.testing
+    - amq-console-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
   usages:
     - server auth
     - client auth  
@@ -54,7 +54,7 @@ spec:
       name: https
       protocol: HTTPS
     hosts:
-      - amq-console-istio-ingress.apps-crc.testing
+      - amq-console-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
     tls:
       mode: SIMPLE
       credentialName: amq-console-cert
@@ -87,7 +87,7 @@ spec:
   gateways:
   - istio-ingress/amq-console
   hosts:
-  - amq-console-istio-ingress.apps-crc.testing
+  - amq-console-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
   http:
   - route:
     - destination:

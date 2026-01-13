@@ -3,7 +3,7 @@ config:
   configFile: |-
     provider = "oidc"
     # if you leave this blank then the redirect will use the original host header and /oauth2/callback 
-    # redirect_url = "https://authz-custom-istio-ingress.apps-crc.testing/oauth2/callback"
+    # redirect_url = "https://authz-custom-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io/oauth2/callback"
     oidc_issuer_url = "https://dev-tqolyn342htgbviz.us.auth0.com/"
 
     # https://github.com/oauth2-proxy/oauth2-proxy/issues/1250#issuecomment-866185985
@@ -24,7 +24,7 @@ config:
     ]
 
     # cookie_domains = [
-    #   ".apps-crc.testing"
+    #   ".apps.cluster-tlkwm.dynamic.redhatworkshops.io"
     # ]
     cookie_samesite = "lax"
     cookie_refresh = "1h"
@@ -39,7 +39,7 @@ config:
     scope = "openid email"
     skip_provider_button = true
     whitelist_domains = [
-      "*.apps-crc.testing"
+      "*.apps.cluster-tlkwm.dynamic.redhatworkshops.io"
     ]
     skip_oidc_discovery = true
     standard_logging = true

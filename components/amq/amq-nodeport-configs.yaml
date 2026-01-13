@@ -9,7 +9,7 @@
 #   secretName: amq-nodeport-cert
 #   # commonName: amq-nodeport
 #   dnsNames:
-#     - amq-nodeport-istio-ingress.apps-crc.testing
+#     - amq-nodeport-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
 #   usages:
 #     - server auth
 #     - client auth  
@@ -54,7 +54,7 @@ spec:
       number: 61616
       protocol: TCP
     hosts:
-      - amq-nodeport-istio-ingress.apps-crc.testing
+      - amq-nodeport-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
     # this won't work, client must negotiate tls with broker
     # tls:
     #   mode: SIMPLE
@@ -88,7 +88,7 @@ spec:
   gateways:
   - istio-ingress/amq-nodeport
   hosts:
-  - amq-nodeport-istio-ingress.apps-crc.testing
+  - amq-nodeport-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
   tcp:
     - match:
         - port: 61616

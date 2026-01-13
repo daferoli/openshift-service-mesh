@@ -13,7 +13,7 @@ spec:
       name: https
       protocol: HTTPS
     hosts:
-      - oauth-bookinfo-istio-ingress.apps-crc.testing
+      - oauth-bookinfo-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
     tls:
       mode: SIMPLE
       credentialName: oauth-bookinfo-cert

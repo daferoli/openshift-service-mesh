@@ -5,7 +5,7 @@ metadata:
   name: oauth-bookinfo
   namespace: istio-ingress
 spec:
-  host: oauth-bookinfo-istio-ingress.apps-crc.testing
+  host: oauth-bookinfo-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
   port:
     targetPort: https
   tls:

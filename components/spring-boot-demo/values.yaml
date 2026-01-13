@@ -1,7 +1,7 @@
 istio:
   enabled: true
 ingressgateway:
-  host: spring-boot-demo-istio-ingress.apps-crc.testing
+  host: spring-boot-demo-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
 replicaCount: 3
 cryostat:
   agent:
