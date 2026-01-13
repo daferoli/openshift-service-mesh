@@ -7,11 +7,11 @@ deployment:
   namespace: istio-system-2-5
 consoleLink: 
   enabled: true
-  route: "https://kiali-ossm-2-5-istio-system-2-5-istio-system-2-5.apps-crc.testing/"
+  route: "https://kiali-ossm-2-5-istio-system-2-5-istio-system-2-5.apps.cluster-tlkwm.dynamic.redhatworkshops.io/"
 grafana:
-  url: https://grafana-instance-route-istio-system-2-5.apps-crc.testing
+  url: https://grafana-instance-route-istio-system-2-5.apps.cluster-tlkwm.dynamic.redhatworkshops.io
 tracing:
-  url: https://jaeger-ui-proxy-tempo-system-2-5.apps-crc.testing
+  url: https://jaeger-ui-proxy-tempo-system-2-5.apps.cluster-tlkwm.dynamic.redhatworkshops.io
 prometheus:
   url: http://prometheus-server.prometheus.svc.cluster.local
   auth: 

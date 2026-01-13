@@ -43,13 +43,13 @@ sample             helloworld-v1-7985d797bd-q7qkm          10.217.0.141         
 ztunnel            ztunnel-cf8mb                           10.217.0.178                                             crc  None     TCP
 tbox@fedora:~$ oc get routes -n istio-ingress
 NAME                 HOST/PORT                                           PATH   SERVICES               PORT    TERMINATION            WILDCARD
-bookinfo             bookinfo-istio-ingress.apps-crc.testing                    istio-ingressgateway   https   passthrough/Redirect   None
-golang-ex-edge       golang-ex-edge-istio-ingress.apps-crc.testing              istio-ingressgateway   http2   edge/Redirect          None
-golang-ex-featurea   golang-ex-featurea-istio-ingress.apps-crc.testing          istio-ingressgateway   https   passthrough/Redirect   None
-golang-ex-high       golang-ex-high-istio-ingress.apps-crc.testing              istio-ingressgateway   https   passthrough/Redirect   None
-golang-ex-stable     golang-ex-stable-istio-ingress.apps-crc.testing            istio-ingressgateway   https   passthrough/Redirect   None
-nginx-echo-headers   nginx-echo-headers-istio-ingress.apps-crc.testing          istio-ingressgateway   https   passthrough/Redirect   None
-tbox@fedora:~$ curl -k https://bookinfo-istio-ingress.apps-crc.testing/productpage
+bookinfo             bookinfo-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io                    istio-ingressgateway   https   passthrough/Redirect   None
+golang-ex-edge       golang-ex-edge-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io              istio-ingressgateway   http2   edge/Redirect          None
+golang-ex-featurea   golang-ex-featurea-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io          istio-ingressgateway   https   passthrough/Redirect   None
+golang-ex-high       golang-ex-high-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io              istio-ingressgateway   https   passthrough/Redirect   None
+golang-ex-stable     golang-ex-stable-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io            istio-ingressgateway   https   passthrough/Redirect   None
+nginx-echo-headers   nginx-echo-headers-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io          istio-ingressgateway   https   passthrough/Redirect   None
+tbox@fedora:~$ curl -k https://bookinfo-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io/productpage
 upstream connect error or disconnect/reset before headers. reset reason: connection terminationtbox@fedora:~$ 
 tbox@fedora:~$ oc get service -n httpbin
 NAME                    TYPE           CLUSTER-IP     EXTERNAL-IP       PORT(S)                        AGE
@@ -182,7 +182,7 @@ tbox@fedora:~$ oc label namespace bookinfo istio.io/dataplane-mode-
 namespace/bookinfo unlabeled
 tbox@fedora:~$ oc label namespace bookinfo istio.io/dataplane-mode=ambient
 namespace/bookinfo not labeled
-tbox@fedora:~$ curl -k https://bookinfo-istio-ingress.apps-crc.testing/productpage
+tbox@fedora:~$ curl -k https://bookinfo-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io/productpage
 <!DOCTYPE html>
 <html>
   <head>

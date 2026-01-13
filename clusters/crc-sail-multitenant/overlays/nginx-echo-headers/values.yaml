@@ -1,2 +1,2 @@
 ingressgateway:
-  host: nginx-echo-headers-istio-ingress.apps-crc.testing
+  host: nginx-echo-headers-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io

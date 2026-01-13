@@ -32,7 +32,7 @@ applications:
 ```
 
 ```sh
-while true; do curl -ki https://golang-ex-featurea-istio-ingress.apps-crc.testing/; sleep 1s; done > out.log
+while true; do curl -ki https://golang-ex-featurea-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io/; sleep 1s; done > out.log
 ```
 
 ```sh

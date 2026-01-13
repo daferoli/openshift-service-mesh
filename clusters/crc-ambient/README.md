@@ -87,7 +87,7 @@ curl -ivk -H Host:nginx-echo-headers.example.com --resolve "nginx-echo-headers.e
 #route
 curl -ivk -H Host:nginx-echo-headers.example.com --resolve "nginx-echo-headers.example.com:443:192.168.130.11" https://nginx-echo-headers.example.com:443
 
-curl -k https://bookinfo-istio-ingress.apps-crc.testing/productpage
+curl -k https://bookinfo-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io/productpage
 ```
 
 ```sh

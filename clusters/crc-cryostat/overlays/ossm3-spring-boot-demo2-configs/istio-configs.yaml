@@ -10,8 +10,8 @@ spec:
   secretName: spring-boot-demo2-cert
   # commonName: spring-boot-demo2
   dnsNames:
-    - spring-boot-demo2-istio-ingress3.apps-crc.testing
-    - spring-boot-demo2-istio-ingress.apps-crc.testing
+    - spring-boot-demo2-istio-ingress3.apps.cluster-tlkwm.dynamic.redhatworkshops.io
+    - spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
     - foggle
   usages:
     - server auth
@@ -41,8 +41,8 @@ spec:
       name: https
       protocol: HTTPS
     hosts:
-      - spring-boot-demo2-istio-ingress3.apps-crc.testing
-      - spring-boot-demo2-istio-ingress.apps-crc.testing
+      - spring-boot-demo2-istio-ingress3.apps.cluster-tlkwm.dynamic.redhatworkshops.io
+      - spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
     tls:
       mode: SIMPLE
       credentialName: spring-boot-demo2-cert
@@ -55,7 +55,7 @@ metadata:
   name: spring-boot-demo2-tmp
   namespace: istio-ingress3
 spec:
-  host: spring-boot-demo2-istio-ingress3.apps-crc.testing
+  host: spring-boot-demo2-istio-ingress3.apps.cluster-tlkwm.dynamic.redhatworkshops.io
   port:
     targetPort: https
   tls:

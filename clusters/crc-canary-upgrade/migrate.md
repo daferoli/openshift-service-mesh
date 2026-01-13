@@ -30,8 +30,8 @@ istio-ingressgateway-565f945765-w2x65.istio-ingress3     Kubernetes     SYNCED  
 
 ## start siege
 ```sh
-gnome-terminal -- bash -c "siege -q -j https://spring-boot-demo2-istio-ingress.apps-crc.testing/; exec bash"
-gnome-terminal -- bash -c "siege -q -j https://spring-boot-demo2-istio-ingress3.apps-crc.testing/; exec bash"
+gnome-terminal -- bash -c "siege -q -j https://spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io/; exec bash"
+gnome-terminal -- bash -c "siege -q -j https://spring-boot-demo2-istio-ingress3.apps.cluster-tlkwm.dynamic.redhatworkshops.io/; exec bash"
 gnome-terminal -- bash -c "oc logs -f deploy/istio-ingressgateway --tail=4 -n istio-ingress > istio-ingress.log; exec bash"
 gnome-terminal -- bash -c "oc logs -f deploy/istio-ingressgateway --tail=4 -n istio-ingress3 > istio-ingress3.log; exec bash"
 ```
@@ -50,7 +50,7 @@ If argo syncs and doesnt have autoprune the new route will have a host conflict 
 
 use control-c and view the results (no outage).
 
-results from `siege -q -j https://spring-boot-demo2-istio-ingress.apps-crc.testing/`
+results from `siege -q -j https://spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io/`
 
 ```sh
 {
@@ -73,19 +73,19 @@ gateway access logs (see timestamps)
 
 ```sh
 tbox@fedora:~/git/trevorbox/openshift-service-mesh$ tail -4 istio-ingress.log 
-[2025-01-16T22:56:50.561Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 39 13 12 "10.217.0.2" "Mozilla/5.0 (redhat-x86_64-linux-gnu) Siege/4.1.6" "7a346fc1-096a-9baf-8920-47ffa54371e3" "spring-boot-demo2-istio-ingress.apps-crc.testing" "10.217.0.180:8080" outbound|8080||spring-boot-demo2.spring-boot-demo2.svc.cluster.local 10.217.1.6:59658 10.217.1.6:8443 10.217.0.2:41594 spring-boot-demo2-istio-ingress.apps-crc.testing -
-[2025-01-16T22:56:50.568Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 39 19 19 "10.217.0.2" "Mozilla/5.0 (redhat-x86_64-linux-gnu) Siege/4.1.6" "41903d89-1b5a-9150-b978-c51c0322edae" "spring-boot-demo2-istio-ingress.apps-crc.testing" "10.217.0.180:8080" outbound|8080||spring-boot-demo2.spring-boot-demo2.svc.cluster.local 10.217.1.6:50920 10.217.1.6:8443 10.217.0.2:41602 spring-boot-demo2-istio-ingress.apps-crc.testing -
-[2025-01-16T22:56:50.569Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 39 18 18 "10.217.0.2" "Mozilla/5.0 (redhat-x86_64-linux-gnu) Siege/4.1.6" "f297ea09-95ff-9472-aa5e-137c763bc65a" "spring-boot-demo2-istio-ingress.apps-crc.testing" "10.217.0.180:8080" outbound|8080||spring-boot-demo2.spring-boot-demo2.svc.cluster.local 10.217.1.6:51006 10.217.1.6:8443 10.217.0.2:41604 spring-boot-demo2-istio-ingress.apps-crc.testing -
-[2025-01-16T22:56:50.572Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 39 15 15 "10.217.0.2" "Mozilla/5.0 (redhat-x86_64-linux-gnu) Siege/4.1.6" "b7944a17-a196-9a01-b3f1-be72c13f21c2" "spring-boot-demo2-istio-ingress.apps-crc.testing" "10.217.0.180:8080" outbound|8080||spring-boot-demo2.spring-boot-demo2.svc.cluster.local 10.217.1.6:50864 10.217.1.6:8443 10.217.0.2:41610 spring-boot-demo2-istio-ingress.apps-crc.testing -
+[2025-01-16T22:56:50.561Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 39 13 12 "10.217.0.2" "Mozilla/5.0 (redhat-x86_64-linux-gnu) Siege/4.1.6" "7a346fc1-096a-9baf-8920-47ffa54371e3" "spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io" "10.217.0.180:8080" outbound|8080||spring-boot-demo2.spring-boot-demo2.svc.cluster.local 10.217.1.6:59658 10.217.1.6:8443 10.217.0.2:41594 spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io -
+[2025-01-16T22:56:50.568Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 39 19 19 "10.217.0.2" "Mozilla/5.0 (redhat-x86_64-linux-gnu) Siege/4.1.6" "41903d89-1b5a-9150-b978-c51c0322edae" "spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io" "10.217.0.180:8080" outbound|8080||spring-boot-demo2.spring-boot-demo2.svc.cluster.local 10.217.1.6:50920 10.217.1.6:8443 10.217.0.2:41602 spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io -
+[2025-01-16T22:56:50.569Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 39 18 18 "10.217.0.2" "Mozilla/5.0 (redhat-x86_64-linux-gnu) Siege/4.1.6" "f297ea09-95ff-9472-aa5e-137c763bc65a" "spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io" "10.217.0.180:8080" outbound|8080||spring-boot-demo2.spring-boot-demo2.svc.cluster.local 10.217.1.6:51006 10.217.1.6:8443 10.217.0.2:41604 spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io -
+[2025-01-16T22:56:50.572Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 39 15 15 "10.217.0.2" "Mozilla/5.0 (redhat-x86_64-linux-gnu) Siege/4.1.6" "b7944a17-a196-9a01-b3f1-be72c13f21c2" "spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io" "10.217.0.180:8080" outbound|8080||spring-boot-demo2.spring-boot-demo2.svc.cluster.local 10.217.1.6:50864 10.217.1.6:8443 10.217.0.2:41610 spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io -
 tbox@fedora:~/git/trevorbox/openshift-service-mesh$ head -8 istio-ingress3.log 
 2025-01-16T22:54:55.762454Z     info    cache   returned workload trust anchor from cache       ttl=23h59m59.237547964s
 2025-01-16T22:54:55.762650Z     info    cache   returned workload trust anchor from cache       ttl=23h59m59.237351552s
 2025-01-16T22:54:56.884798Z     info    Readiness succeeded in 1.562764415s
 2025-01-16T22:54:56.885399Z     info    Envoy proxy is ready
-[2025-01-16T22:56:50.544Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 39 4 2 "10.217.0.2" "Mozilla/5.0 (redhat-x86_64-linux-gnu) Siege/4.1.6" "72cb36e3-b4d7-4e15-8e4c-a11b80d62b32" "spring-boot-demo2-istio-ingress.apps-crc.testing" "10.217.0.180:8080" outbound|8080||spring-boot-demo2.spring-boot-demo2.svc.cluster.local 10.217.1.5:51506 10.217.1.5:8443 10.217.0.2:40610 spring-boot-demo2-istio-ingress.apps-crc.testing -
-[2025-01-16T22:56:50.547Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 39 3 3 "10.217.0.2" "Mozilla/5.0 (redhat-x86_64-linux-gnu) Siege/4.1.6" "76633aa9-6a29-4a88-8c11-fab6d9f783c4" "spring-boot-demo2-istio-ingress.apps-crc.testing" "10.217.0.180:8080" outbound|8080||spring-boot-demo2.spring-boot-demo2.svc.cluster.local 10.217.1.5:51512 10.217.1.5:8443 10.217.0.2:40618 spring-boot-demo2-istio-ingress.apps-crc.testing -
-[2025-01-16T22:56:50.563Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 39 7 6 "10.217.0.2" "Mozilla/5.0 (redhat-x86_64-linux-gnu) Siege/4.1.6" "f7d04eae-1324-4067-b1a0-b352977d8ee8" "spring-boot-demo2-istio-ingress.apps-crc.testing" "10.217.0.180:8080" outbound|8080||spring-boot-demo2.spring-boot-demo2.svc.cluster.local 10.217.1.5:51516 10.217.1.5:8443 10.217.0.2:40640 spring-boot-demo2-istio-ingress.apps-crc.testing -
-[2025-01-16T22:56:50.557Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 39 15 15 "10.217.0.2" "Mozilla/5.0 (redhat-x86_64-linux-gnu) Siege/4.1.6" "f3b90ef8-4a22-4d1e-9ec5-daa0c4a55650" "spring-boot-demo2-istio-ingress.apps-crc.testing" "10.217.0.180:8080" outbound|8080||spring-boot-demo2.spring-boot-demo2.svc.cluster.local 10.217.1.5:51512 10.217.1.5:8443 10.217.0.2:40620 spring-boot-demo2-istio-ingress.apps-crc.testing -
+[2025-01-16T22:56:50.544Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 39 4 2 "10.217.0.2" "Mozilla/5.0 (redhat-x86_64-linux-gnu) Siege/4.1.6" "72cb36e3-b4d7-4e15-8e4c-a11b80d62b32" "spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io" "10.217.0.180:8080" outbound|8080||spring-boot-demo2.spring-boot-demo2.svc.cluster.local 10.217.1.5:51506 10.217.1.5:8443 10.217.0.2:40610 spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io -
+[2025-01-16T22:56:50.547Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 39 3 3 "10.217.0.2" "Mozilla/5.0 (redhat-x86_64-linux-gnu) Siege/4.1.6" "76633aa9-6a29-4a88-8c11-fab6d9f783c4" "spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io" "10.217.0.180:8080" outbound|8080||spring-boot-demo2.spring-boot-demo2.svc.cluster.local 10.217.1.5:51512 10.217.1.5:8443 10.217.0.2:40618 spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io -
+[2025-01-16T22:56:50.563Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 39 7 6 "10.217.0.2" "Mozilla/5.0 (redhat-x86_64-linux-gnu) Siege/4.1.6" "f7d04eae-1324-4067-b1a0-b352977d8ee8" "spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io" "10.217.0.180:8080" outbound|8080||spring-boot-demo2.spring-boot-demo2.svc.cluster.local 10.217.1.5:51516 10.217.1.5:8443 10.217.0.2:40640 spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io -
+[2025-01-16T22:56:50.557Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 39 15 15 "10.217.0.2" "Mozilla/5.0 (redhat-x86_64-linux-gnu) Siege/4.1.6" "f3b90ef8-4a22-4d1e-9ec5-daa0c4a55650" "spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io" "10.217.0.180:8080" outbound|8080||spring-boot-demo2.spring-boot-demo2.svc.cluster.local 10.217.1.5:51512 10.217.1.5:8443 10.217.0.2:40620 spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io -
 ```
 
 ## Verify the sidecar can be autoinjected (from ossm3) if the pod restarted without outage. 
@@ -155,7 +155,7 @@ spring-boot-demo2-664c6cc5d6-5pzxj.spring-boot-demo2       Kubernetes     SYNCED
 start siege
 
 ```sh
-gnome-terminal -- bash -c "siege -q -j https://spring-boot-demo2-istio-ingress.apps-crc.testing/; exec bash"
+gnome-terminal -- bash -c "siege -q -j https://spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io/; exec bash"
 ```
 
 change the label in components/istio-member-namepsaces/values.yaml from istio.io/rev: ossm2 to istio.io/rev: default
@@ -273,7 +273,7 @@ stop siege, show results
 results:
 
 ```sh
-tbox@fedora:~/.local/bin$ siege -q -j https://spring-boot-demo-istio-ingress.apps-crc.testing/
+tbox@fedora:~/.local/bin$ siege -q -j https://spring-boot-demo-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io/
 ^C
 {
 	"transactions":			      348411,

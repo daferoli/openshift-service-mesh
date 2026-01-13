@@ -3,7 +3,7 @@
 https://istio.io/v1.20/docs/ops/configuration/traffic-management/network-topologies/#forwarding-external-client-attributes-ip-address-certificate-info-to-destination-workloads
 
 ```sh
-tbox@fedora:~/git/trevorbox/openshift-service-mesh$ curl -k -s -H 'X-Forwarded-For: 56.5.6.7, 72.9.5.6, 98.1.2.3' "https://golang-ex-featurea-istio-ingress.apps-crc.testing/"
+tbox@fedora:~/git/trevorbox/openshift-service-mesh$ curl -k -s -H 'X-Forwarded-For: 56.5.6.7, 72.9.5.6, 98.1.2.3' "https://golang-ex-featurea-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io/"
 {
  "RequestHeaders": {
   "Accept": [
@@ -91,14 +91,14 @@ https://docs.openshift.com/container-platform/4.16/networking/routes/route-confi
 haproxy.router.openshift.io/set-forwarded-headers: replace
 
 ```sh
-tbox@fedora:~/git/trevorbox/openshift-service-mesh$ curl -k -s -H 'X-Forwarded-For: 56.5.6.7, 72.9.5.6, 98.1.2.3' "https://golang-ex-edge-istio-ingress.apps-crc.testing/"
+tbox@fedora:~/git/trevorbox/openshift-service-mesh$ curl -k -s -H 'X-Forwarded-For: 56.5.6.7, 72.9.5.6, 98.1.2.3' "https://golang-ex-edge-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io/"
 {
  "RequestHeaders": {
   "Accept": [
    "*/*"
   ],
   "Forwarded": [
-   "for=192.168.130.1;host=golang-ex-edge-istio-ingress.apps-crc.testing;proto=https"
+   "for=192.168.130.1;host=golang-ex-edge-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io;proto=https"
   ],
   "Traceparent": [
    "00-7902062dbcb726642632182ce87601fe-a98ec5f2be06489d-01"
@@ -122,7 +122,7 @@ tbox@fedora:~/git/trevorbox/openshift-service-mesh$ curl -k -s -H 'X-Forwarded-F
    "192.168.130.1,10.217.0.2"
   ],
   "X-Forwarded-Host": [
-   "golang-ex-edge-istio-ingress.apps-crc.testing"
+   "golang-ex-edge-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io"
   ],
   "X-Forwarded-Port": [
    "443"
@@ -179,14 +179,14 @@ Note: Authorizationpolicy needs to use remoteIpBlocks per https://istio.io/v1.20
 Yay it works
 
 ```sh
-tbox@fedora:~/git/trevorbox/openshift-service-mesh$ curl -k -s -H 'X-Forwarded-For: 56.5.6.7, 72.9.5.6, 98.1.2.3' "https://golang-ex-edge-istio-ingress.apps-crc.testing/"
+tbox@fedora:~/git/trevorbox/openshift-service-mesh$ curl -k -s -H 'X-Forwarded-For: 56.5.6.7, 72.9.5.6, 98.1.2.3' "https://golang-ex-edge-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io/"
 {
  "RequestHeaders": {
   "Accept": [
    "*/*"
   ],
   "Forwarded": [
-   "for=192.168.130.1;host=golang-ex-edge-istio-ingress.apps-crc.testing;proto=https"
+   "for=192.168.130.1;host=golang-ex-edge-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io;proto=https"
   ],
   "Traceparent": [
    "00-2975b5786fb9275ef200e1790bc86aa4-807fe77cb50e1226-01"
@@ -210,7 +210,7 @@ tbox@fedora:~/git/trevorbox/openshift-service-mesh$ curl -k -s -H 'X-Forwarded-F
    "192.168.130.1,10.217.0.2"
   ],
   "X-Forwarded-Host": [
-   "golang-ex-edge-istio-ingress.apps-crc.testing"
+   "golang-ex-edge-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io"
   ],
   "X-Forwarded-Port": [
    "443"
@@ -250,18 +250,18 @@ tbox@fedora:~/git/trevorbox/openshift-service-mesh$ curl -k -s -H 'X-Forwarded-F
 ```
 
 ```logs
-[2025-02-08T00:14:22.582Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 1651 3 3 "192.168.130.1,10.217.0.2" "curl/8.6.0" "6965ab38-54da-9c39-84ae-29464b4e6c47" "golang-ex-edge-istio-ingress.apps-crc.testing" "10.217.0.203:8080" outbound|8080||golang-ex-featurea.golang-ex.svc.cluster.local 10.217.1.78:50610 10.217.1.78:8080 192.168.130.1:0 - -
-2025-02-08T00:15:19.831579Z debug envoy rbac external/envoy/source/extensions/filters/http/rbac/rbac_filter.cc:114 checking request: requestedServerName: , sourceIP: 10.217.0.2:48052, directRemoteIP: 10.217.0.2:48052, remoteIP: 192.168.130.1:0,localAddress: 10.217.1.78:8080, ssl: none, headers: ':authority', 'golang-ex-edge-istio-ingress.apps-crc.testing'
+[2025-02-08T00:14:22.582Z] "GET / HTTP/1.1" 200 - via_upstream - "-" 0 1651 3 3 "192.168.130.1,10.217.0.2" "curl/8.6.0" "6965ab38-54da-9c39-84ae-29464b4e6c47" "golang-ex-edge-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io" "10.217.0.203:8080" outbound|8080||golang-ex-featurea.golang-ex.svc.cluster.local 10.217.1.78:50610 10.217.1.78:8080 192.168.130.1:0 - -
+2025-02-08T00:15:19.831579Z debug envoy rbac external/envoy/source/extensions/filters/http/rbac/rbac_filter.cc:114 checking request: requestedServerName: , sourceIP: 10.217.0.2:48052, directRemoteIP: 10.217.0.2:48052, remoteIP: 192.168.130.1:0,localAddress: 10.217.1.78:8080, ssl: none, headers: ':authority', 'golang-ex-edge-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io'
 ':path', '/'
 ':method', 'GET'
 ':scheme', 'https'
 'user-agent', 'curl/8.6.0'
 'accept', '*/*'
 'x-forwarded-for', '192.168.130.1,10.217.0.2'
-'x-forwarded-host', 'golang-ex-edge-istio-ingress.apps-crc.testing'
+'x-forwarded-host', 'golang-ex-edge-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io'
 'x-forwarded-port', '443'
 'x-forwarded-proto', 'https'
-'forwarded', 'for=192.168.130.1;host=golang-ex-edge-istio-ingress.apps-crc.testing;proto=https'
+'forwarded', 'for=192.168.130.1;host=golang-ex-edge-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io;proto=https'
 'x-envoy-external-address', '192.168.130.1'
 'x-request-id', '8cfe2b8f-794c-9423-99c9-65a75c407b2b'
 'x-envoy-decorator-operation', 'golang-ex-featurea.golang-ex.svc.cluster.local:8080/*'
@@ -277,7 +277,7 @@ The 'x-envoy-external-address', '192.168.130.1' matches the ip in our Authorizat
 
 ```sh
 # we need to send the request with SNI
-tbox@fedora:~/git/trevorbox/openshift-service-mesh$ curl -k --resolve golang-ex-featurea-istio-ingress.apps-crc.testing:31938:198.168.130.11 https://golang-ex-featurea-istio-ingress.apps-crc.testing
+tbox@fedora:~/git/trevorbox/openshift-service-mesh$ curl -k --resolve golang-ex-featurea-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io:31938:198.168.130.11 https://golang-ex-featurea-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
 {
  "request_headers": {
   "Accept": [
