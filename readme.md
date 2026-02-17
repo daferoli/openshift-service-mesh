@@ -84,9 +84,9 @@ Once you have a copy of this repo in your organization, you have to seed your Hu
 To do so you can simply run this commands, however you might want to implement these steps in different ways in your environment:
 
 ```sh
-export gitops_repo=https://github.com/trevorbox/openshift-service-mesh.git
-export cluster_name=crc #aws, crc-ossm3
-export ingress_host=openshift-gitops-server-openshift-gitops.$(oc get ingress.config.openshift.io cluster -o jsonpath={.spec.domain}) 
+export gitops_repo=https://github.com/daferoli/openshift-service-mesh.git
+export cluster_name=crc-canary-upgrade #aws, crc-ossm3
+export ingress_host=openshift-gitops-server-openshift-gitops.$(oc get ingress.config.openshift.io cluster -o jsonpath={.spec.domain})
 # oc apply -f .bootstrap/subscription.yaml
 helm repo add redhat-cop https://redhat-cop.github.io/helm-charts
 helm upgrade -i openshift-gitops redhat-cop/operators-installer -f .bootstrap/values.yaml -n openshift-operators --create-namespace
