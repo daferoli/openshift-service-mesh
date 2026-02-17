@@ -1,6 +1,6 @@
 consoleLink: 
   enabled: true
-  route: "https://kiali-kiali.apps.cluster-tlkwm.dynamic.redhatworkshops.io"
+  route: "https://kiali-kiali.apps.cluster-mqlh6.dynamic.redhatworkshops.io"
 ossmconsole:
   enabled: false
 kiali:
@@ -43,7 +43,7 @@ kiali:
           - name: Istio Wasm Extension Dashboard
         enabled: true
         in_cluster_url: 'http://grafana-instance-service.grafana.svc:3000'
-        url: 'https://grafana-instance-route-grafana.apps.cluster-tlkwm.dynamic.redhatworkshops.io'
+        url: 'https://grafana-instance-route-grafana.apps.cluster-mqlh6.dynamic.redhatworkshops.io'
       istio:
         component_status:
           # components:
@@ -68,7 +68,7 @@ kiali:
         enabled: true
         in_cluster_url: 'http://tempo-minio-dev-query-frontend.tempo-system.svc.cluster.local:16685'
         query_timeout: 30
-        url: 'https://jaeger-ui-proxy-tempo-system.apps.cluster-tlkwm.dynamic.redhatworkshops.io'
+        url: 'https://jaeger-ui-proxy-tempo-system.apps.cluster-mqlh6.dynamic.redhatworkshops.io'
         use_grpc: true
     installation_tag: 'Kiali'
     istio_namespace: istio-system

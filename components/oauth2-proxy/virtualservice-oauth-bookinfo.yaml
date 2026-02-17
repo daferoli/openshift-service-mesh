@@ -7,7 +7,7 @@ spec:
   gateways:
   - istio-ingress/oauth-bookinfo
   hosts:
-  - oauth-bookinfo-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
+  - oauth-bookinfo-istio-ingress.apps.cluster-mqlh6.dynamic.redhatworkshops.io
   http:
   - match:
     - uri:

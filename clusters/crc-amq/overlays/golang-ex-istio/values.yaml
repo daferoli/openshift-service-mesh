@@ -7,10 +7,10 @@ context:
 features:
   stable:
     svc: golang-ex-stable
-    host: golang-ex-stable-another-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
+    host: golang-ex-stable-another-istio-ingress.apps.cluster-mqlh6.dynamic.redhatworkshops.io
   high:
     svc: golang-ex-high
-    host: golang-ex-high-another-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
+    host: golang-ex-high-another-istio-ingress.apps.cluster-mqlh6.dynamic.redhatworkshops.io
   featurea:
     svc: golang-ex-featurea
-    host: golang-ex-featurea-another-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
+    host: golang-ex-featurea-another-istio-ingress.apps.cluster-mqlh6.dynamic.redhatworkshops.io

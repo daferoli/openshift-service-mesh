@@ -8,7 +8,7 @@ spec:
     istio: ingressgateway
   servers:
     - hosts:
-        - golang-ex-edge-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
+        - golang-ex-edge-istio-ingress.apps.cluster-mqlh6.dynamic.redhatworkshops.io
       port:
         name: https
         number: 8080
@@ -44,7 +44,7 @@ spec:
   gateways:
     - istio-ingress/golang-ex-edge
   hosts:
-    - golang-ex-edge-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
+    - golang-ex-edge-istio-ingress.apps.cluster-mqlh6.dynamic.redhatworkshops.io
   http:
     - route:
         - destination:

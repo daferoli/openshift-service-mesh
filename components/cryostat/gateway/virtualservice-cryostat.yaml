@@ -7,7 +7,7 @@ spec:
   gateways:
     - istio-ingress/cryostat
   hosts:
-    - cryostat-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
+    - cryostat-istio-ingress.apps.cluster-mqlh6.dynamic.redhatworkshops.io
   http:
     - route:
         - destination:

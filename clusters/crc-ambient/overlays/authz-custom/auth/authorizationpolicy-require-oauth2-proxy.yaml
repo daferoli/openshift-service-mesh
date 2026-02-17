@@ -15,5 +15,5 @@ spec:
     - operation:
         hosts:
         # TODO: try wildcards
-        - "nginx-echo-headers-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io"
-        - "golang-ex-stable-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io"
+        - "nginx-echo-headers-istio-ingress.apps.cluster-mqlh6.dynamic.redhatworkshops.io"
+        - "golang-ex-stable-istio-ingress.apps.cluster-mqlh6.dynamic.redhatworkshops.io"

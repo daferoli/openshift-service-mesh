@@ -8,7 +8,7 @@ spec:
   duration: 2160h1ms # 90 days 1ms
   renewBefore: 360h # 15d
   dnsNames:
-    - bookinfo-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
+    - bookinfo-istio-ingress.apps.cluster-mqlh6.dynamic.redhatworkshops.io
   issuerRef:
     group: cert-manager.io
     kind: Issuer

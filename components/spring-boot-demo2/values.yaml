@@ -1,7 +1,7 @@
 istio:
   enabled: false
 ingressgateway:
-  host: spring-boot-demo2-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io
+  host: spring-boot-demo2-istio-ingress.apps.cluster-mqlh6.dynamic.redhatworkshops.io
 fullnameOverride: spring-boot-demo2
 replicaCount: 1
 cryostat:

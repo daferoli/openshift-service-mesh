@@ -93,12 +93,12 @@ spec:
                             - header:
                                 name: ":authority"
                                 string_match:
-                                  exact: "nginx-echo-headers-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io"
+                                  exact: "nginx-echo-headers-istio-ingress.apps.cluster-mqlh6.dynamic.redhatworkshops.io"
                                   ignore_case: true
                             - header:
                                 name: ":authority"
                                 string_match:
-                                  exact: "golang-ex-stable-istio-ingress.apps.cluster-tlkwm.dynamic.redhatworkshops.io"
+                                  exact: "golang-ex-stable-istio-ingress.apps.cluster-mqlh6.dynamic.redhatworkshops.io"
                                   ignore_case: true
                 principals:
                   - and_ids:
