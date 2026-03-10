@@ -9,7 +9,7 @@ tenant:
   pools:
     - name: pool-0
       servers: 1
-      storageClassName: ocs-external-storagecluster-ceph-rbd
+      storageClassName: gp3-csi
       size: 2Gi
       securityContext: 
         runAsNonRoot: true
