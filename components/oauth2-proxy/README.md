@@ -10,7 +10,7 @@ Create an auth0 app and api programmatically.
 auth0 login
 
 #create the app
-auth0 apps create --name myapp --description myapp --type regular --callbacks https://oauth-bookinfo-istio-ingress.apps.cluster-xp6rn.dynamic.redhatworkshops.io/oauth2/callback
+auth0 apps create --name myapp --description myapp --type regular --callbacks https://oauth-bookinfo-istio-ingress.apps.cluster-nbhrp.dynamic.redhatworkshops.io/oauth2/callback
 
 # get the client id from the list for myapp
 auth0 apps list

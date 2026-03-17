@@ -12,7 +12,7 @@ default:
       server: https://kubernetes.default.svc
     source:
       repoURL: https://github.com/daferoli/openshift-service-mesh
-      targetRevision: HEAD
+      targetRevision: demo-redhat-cluster
     syncOptions:
     - ApplyOutOfSyncOnly=true
     - PrunePropagationPolicy=foreground

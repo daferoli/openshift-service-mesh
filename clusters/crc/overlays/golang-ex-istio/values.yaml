@@ -1,7 +1,7 @@
 features:
   stable:
-    host: golang-ex-stable-istio-ingress.apps.cluster-xp6rn.dynamic.redhatworkshops.io
+    host: golang-ex-stable-istio-ingress.apps.cluster-nbhrp.dynamic.redhatworkshops.io
   high:
-    host: golang-ex-high-istio-ingress.apps.cluster-xp6rn.dynamic.redhatworkshops.io
+    host: golang-ex-high-istio-ingress.apps.cluster-nbhrp.dynamic.redhatworkshops.io
   featurea:
-    host: golang-ex-featurea-istio-ingress.apps.cluster-xp6rn.dynamic.redhatworkshops.io
+    host: golang-ex-featurea-istio-ingress.apps.cluster-nbhrp.dynamic.redhatworkshops.io
